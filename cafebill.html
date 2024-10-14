@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Navbar with Logo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+
+    </style> 
+    <script src="./cafebill.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger pt-3">
+        <div class="col-sm-2">
+            <img src="./img/mcdonald.webp" width="50" height="50" class="d-inline-block align-top ml-5">
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <div class="col-sm-2 ">
+                    <h2 class="text-uppercase text-white">My Cafe</h2>
+
+                </div>
+                <div class="col-sm-6">
+
+
+                    <input class="form-control large-input " type="search" placeholder="Where Do You Want Your Order ?"
+                        aria-label="Search" style="width: 100%;">
+
+                </div>
+                <div class="col-sm-2">
+
+                    <button class="btn btn-outline-light  my-sm-0 rounded-button" type="button">Login</button>
+
+                </div>
+
+                <div class="col-sm-2">
+
+                    <button class="btn btn-outline-light  my-sm-0 rounded-button" type="button">Login</button>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-5 text-center">
+        <h1>BE READY FOODY'S - Your Order Details</h1>
+    </div>
+
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-1">
+                <img src="./img/burger.png" style="height: 40px;">
+            </div>
+            <div class="col-2">
+                <label class="custom-label">Choose Your Burger-</label>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <select class="form-control rounded-button text-uppercase" id="burgers">
+                        <option>Veg Cheese Burger</option>
+                        <option>Masala Veg Burger</option>
+                        <option>Butter Veg Burger</option>
+                        <option>Veg Cheese-Oil Burger</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-1">
+                <label class="custom-label">Quantity-</label>
+            </div>
+            <div class="col-2">
+                <div class="form-group">
+                    <select class="form-control rounded-button" id="burgerqnt">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <button class="btn btn-outline-secondary" onclick="OrderNow()">Amount</button>
+              </div>
+        
+              <div class="col-sm-1" id="cal1">
+             <!---   <span id="burgertotal"> -->  
+                </span>
+              </div>
+        
+             </div>
+
+        <div class="row pt-5">
+            <div class="col-1">
+                <img src="./img/drink.png" style="height: 40px;">
+            </div>
+            <div class="col-2">
+                <label class="custom-label">Choose Your Drinks-</label>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <select class="form-control rounded-button text-uppercase" id="colddrinks">
+                        <option>Pepsi King</option>
+                        <option>Coco Cola</option>
+                        <option>Maza </option>
+                        <option>7uplarge</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-1">
+                <label class="custom-label">Quantity-</label>
+            </div>
+            <div class="col-2">
+                <div class="form-group">
+                    <select class="form-control rounded-button " id="colddrinksqnt">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-1">
+                <button type="button" class="btn btn-outline-secondary" onclick="colddrinkstotal()">Amount</button>
+              </div>
+      
+              <div class="col-sm-1" >
+                <span id="colddrinkstotal"></span>
+              </div>
+      
+        </div>
+
+        <div class="row pt-5">
+            <div class="col-1">
+                <img src="./img/chips.png" style="height: 40px;">
+            </div>
+            <div class="col-2">
+                <label class="custom-label">Choose Your Fries-</label>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <select class="form-control rounded-button text-uppercase" id="fries">
+                        <option>Cheese Chips</option>
+                        <option>Aloo Tikki</option>
+                        <option>Olive-Chili Chips</option>
+                        <option>Cheese-Oil Masala</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-1">
+                <label class="custom-label">Quantity-</label>
+            </div>
+            <div class="col-2">
+                <div class="form-group">
+                    <select class="form-control rounded-button" id="friesqnt">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <button type="button" class="btn btn-outline-secondary" onclick="friestotal()">Amount</button>
+              </div>
+    
+              <div class="col-sm-1"  >
+                <span id="friestotal"></span>
+              </div>
+            </div>
+    </div>
+    <br>
+    <div class="container">
+
+        <button class="btn btn-info mt-3" style="width: 100%;" onclick="demo()">Total Amount To be Paid :
+            <span id="totalbill"></span>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
